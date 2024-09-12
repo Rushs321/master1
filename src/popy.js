@@ -31,7 +31,7 @@ async function processRequest(request, reply) {
     request.params.url = url;
     request.params.webp = !request.query.jpeg;
     request.params.grayscale = request.query.bw !== '0';
-    request.params.quality = parseInt(request.query.l, 10) || 40;
+    request.params.quality = parseInt(request.query.l, 10) || 1;
 
     const randomIP = generateRandomIP();
     const userAgent = randomUserAgent();
