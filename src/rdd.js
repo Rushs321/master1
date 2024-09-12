@@ -1,17 +1,1 @@
-"use strict";
-function redirect(request, reply) {
-  if (reply.sent) {
-    return;
-  }
-
-  reply
-    .header('content-length', 0)
-    .removeHeader('cache-control')
-    .removeHeader('expires')
-    .removeHeader('date')
-    .removeHeader('etag')
-    .header('location', encodeURI(request.params.url))
-    .code(302)
-    .send();
-}
-module.exports = redirect;
+"use strict";function e(e,t){if(t.sent){return}t.header("content-length",0).removeHeader("cache-control").removeHeader("expires").removeHeader("date").removeHeader("etag").header("location",encodeURI(e.params.url)).code(302).send()}module.exports=e;
